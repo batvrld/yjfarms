@@ -276,21 +276,40 @@
     background: var(--primary);
     color: white;
 }
+#nav-logo {
+    filter: brightness(0) invert(1); /* white at start */
+}
     </style>
 </head>
 <body class="bg-[#fcfbf7]">
 
     <!-- Preloader -->
     <div id="preloader">
-        <div class="loader-content">
-            <div class="text-primary font-bold tracking-tighter text-lg leading-none">
-                YESU JEEVIKKIRAR <span class="serif italic font-normal block text-xs">Farms</span>
-            </div>
-            <div class="loader-bar-container">
-                <div id="loader-bar"></div>
-            </div>
-            <div id="loader-percent">0%</div>
-        </div>
+        <div class="loader-content flex flex-col items-center justify-center h-full w-full text-center">
+
+    <!-- BIG LOGO -->
+    <img src="yj.png"
+     id="loader-logo"
+     alt="YJ Farms Logo"
+     class="w-40 md:w-44 lg:w-48 object-contain mb-6 transition duration-500 -translate-x-2 md:-translate-x-3 filter brightness-0">
+
+    <!-- TEXT -->
+    <div class="text-primary font-bold tracking-tighter text-lg md:text-xl leading-none mb-6">
+        YESU JEEVIKKIRAR 
+        <span class="serif italic font-normal block text-xs md:text-sm">
+            Farms
+        </span>
+    </div>
+
+    <!-- LOADER BAR -->
+    <div class="loader-bar-container w-40 md:w-56 lg:w-64">
+        <div id="loader-bar"></div>
+    </div>
+
+    <!-- PERCENT -->
+    <div id="loader-percent" class="mt-4">0%</div>
+
+</div>
     </div>
 
     <!-- Lightbox -->
@@ -306,9 +325,23 @@
 
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 w-full z-[100] py-6 px-6 md:px-12 flex justify-between items-center transition-all duration-500" id="navbar">
-        <div class="text-white mix-blend-difference font-bold tracking-tighter text-2xl md:text-3xl lg:text-4xl leading-none">
-            YESU JEEVIKKIRAR <span class="serif italic font-normal block md:inline text-base md:text-2xl lg:text-3xl">Farms</span>
-        </div>
+        <div class="flex items-center gap-3 md:gap-4">
+
+    <!-- Logo -->
+    <img src="yj.png"
+     id="nav-logo"
+     alt="YJ Farms Logo"
+     class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-contain scale-110 -translate-y-1 md:-translate-y-1.5">
+
+    <!-- Text -->
+    <div class="text-white mix-blend-difference font-bold tracking-tighter text-xl md:text-2xl lg:text-3xl leading-none">
+        YESU JEEVIKKIRAR 
+        <span class="serif italic font-normal block md:inline text-sm md:text-xl lg:text-2xl">
+            Farms
+        </span>
+    </div>
+
+</div>
         
         <!-- Desktop Nav -->
         <div class="hidden lg:flex gap-10 text-[10px] uppercase tracking-[0.2em] font-medium text-white mix-blend-difference">
@@ -554,8 +587,8 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center mb-32 md:mb-40 relative z-10">
                 <div class="md:text-right reveal px-6 md:px-0">
-                    <h3 class="h-md serif mb-6">Day 01</h3>
-                    <p class="p-lg opacity-70">Coconuts are hand-picked only when they reach the perfect state of ripeness, ensuring the highest oil content.</p>
+                    <h3 class="h-md serif mb-6">Stage 01</h3>
+                    <p class="p-lg opacity-70">We harvest mature coconuts and dry them naturally to ensure high quality for our oil.</p>
                 </div>
                 <div class="reveal" style="transition-delay: 0.2s;">
                     <img src="7.jpg" class="w-full aspect-video object-cover rounded-sm shadow-2xl">
@@ -567,14 +600,14 @@
                     <img src="3.jpg" class="w-full aspect-video object-cover rounded-sm shadow-2xl">
                 </div>
                 <div class="order-1 md:order-2 reveal px-6 md:px-0">
-                    <h3 class="h-md serif mb-6">Day 10</h3>
-                    <p class="p-lg opacity-70">Kernels undergo a slow, natural drying process under the sun, preserving essential vitamins and aroma.</p>
+                    <h3 class="h-md serif mb-6">Stage 02</h3>
+                    <p class="p-lg opacity-70">Freshly split coconuts are sun-dried to transform the white kernels into high-quality, nutrient-rich copra.</p>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center mb-32 md:mb-40 relative z-10">
                 <div class="md:text-right reveal px-6 md:px-0">
-                    <h3 class="h-md serif mb-6">Day 20</h3>
-                    <p class="p-lg opacity-70">Coconuts are hand-picked only when they reach the perfect state of ripeness, ensuring the highest oil content.</p>
+                    <h3 class="h-md serif mb-6">Stage 03</h3>
+                    <p class="p-lg opacity-70">The dried kernels naturally detach from their shells, becoming concentrated copra ready for pure oil extraction.</p>
                 </div>
                 <div class="reveal" style="transition-delay: 0.2s;">
                     <img src="8.jpg" class="w-full aspect-video object-cover rounded-sm shadow-2xl">
@@ -586,8 +619,17 @@
                     <img src="9.jpg" class="w-full aspect-video object-cover rounded-sm shadow-2xl">
                 </div>
                 <div class="order-1 md:order-2 reveal px-6 md:px-0">
-                    <h3 class="h-md serif mb-6">Day 40</h3>
-                    <p class="p-lg opacity-70">Kernels undergo a slow, natural drying process under the sun, preserving essential vitamins and aroma.</p>
+                    <h3 class="h-md serif mb-6">Stage 04</h3>
+                    <p class="p-lg opacity-70">The fully dried copra is sorted and piled high, awaiting final milling for pure oil extraction.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center mb-32 md:mb-40 relative z-10">
+                <div class="md:text-right reveal px-6 md:px-0">
+                    <h3 class="h-md serif mb-6">Stage 05</h3>
+                    <p class="p-lg opacity-70">Our premium oil is cold-pressed and bottled, preserving its natural clarity and organic nutritional benefits.</p>
+                </div>
+                <div class="reveal" style="transition-delay: 0.2s;">
+                    <img src="oil2.jpeg" class="w-full aspect-video object-cover rounded-sm shadow-2xl">
                 </div>
             </div>
 
@@ -810,22 +852,35 @@ window.addEventListener('DOMContentLoaded', () => {
 
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            
-            if (window.scrollY > 50) {
-                nav.classList.add('bg-white', 'shadow-sm', 'py-4');
-                nav.classList.remove('py-6');
-                nav.querySelectorAll('a, div, button').forEach(el => el.classList.remove('text-white', 'mix-blend-difference'));
-            } else {
-                nav.classList.remove('bg-white', 'shadow-sm', 'py-4');
-                nav.classList.add('py-6');
-                nav.querySelectorAll('a, div, button').forEach(el => el.classList.add('text-white', 'mix-blend-difference'));
-            }
+    const nav = document.getElementById('navbar');
+    const logo = document.getElementById('nav-logo');
 
-            const heroBg = document.getElementById('hero-bg');
-            if(heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.4}px)`;
-        });
+    if (window.scrollY > 50) {
+        nav.classList.add('bg-white', 'shadow-sm', 'py-4');
+        nav.classList.remove('py-6');
 
+        nav.querySelectorAll('a, div, button').forEach(el => 
+            el.classList.remove('text-white', 'mix-blend-difference')
+        );
+
+        // 👇 restore original logo color
+        logo.style.filter = 'brightness(0)';
+
+    } else {
+        nav.classList.remove('bg-white', 'shadow-sm', 'py-4');
+        nav.classList.add('py-6');
+
+        nav.querySelectorAll('a, div, button').forEach(el => 
+            el.classList.add('text-white', 'mix-blend-difference')
+        );
+
+        // 👇 make logo white again
+        logo.style.filter = 'brightness(0) invert(1)';
+    }
+
+    const heroBg = document.getElementById('hero-bg');
+    if(heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.4}px)`;
+});
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
