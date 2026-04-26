@@ -340,6 +340,23 @@
                 height: 40%;
             }
         }
+        #contact input,
+#contact textarea {
+    color: #000 !important;
+    font-weight: 600 !important;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+    color: #000 !important;
+    opacity: 0.8 !important;
+}
+
+#contact label {
+    color: #000 !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+}
     </style>
 </head>
 
@@ -791,54 +808,55 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 md:p-12 shadow-sm reveal">
-                    <form action="https://formspree.io/f/xjgjzlwq" method="POST" class="space-y-6">
+                <div class="bg-white p-8 md:p-12 shadow-sm reveal text-black">
 
-                        <!-- hidden config -->
-                        <input type="hidden" name="_subject" value="New Inquiry from Website">
-                        <input type="hidden" name="_captcha" value="false">
+    <form action="https://formspree.io/f/xjgjzlwq" method="POST" class="space-y-6">
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- hidden config -->
+        <input type="hidden" name="_subject" value="New Inquiry from Website">
+        <input type="hidden" name="_captcha" value="false">
 
-                            <div class="space-y-2">
-                                <label class="text-[10px] uppercase tracking-widest opacity-60">Name</label>
-                                <input type="text" name="name" required
-                                    class="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-primary transition"
-                                    placeholder="Full Name">
-                            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                            <div class="space-y-2">
-                                <label class="text-[10px] uppercase tracking-widest opacity-60">Phone</label>
-                                <input type="tel" name="phone" required
-                                    class="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-primary transition"
-                                    placeholder="+91">
-                            </div>
+            <div class="space-y-2">
+                <label class="text-[10px] uppercase tracking-widest font-bold text-black">Name</label>
+                <input type="text" name="name" required
+                    class="w-full border-b-2 border-black py-3 text-black font-semibold placeholder:text-black/80 focus:outline-none focus:border-[#2d5a27] transition"
+                    placeholder="Full Name">
+            </div>
 
-                        </div>
+            <div class="space-y-2">
+                <label class="text-[10px] uppercase tracking-widest font-bold text-black">Phone</label>
+                <input type="tel" name="phone" required
+                    class="w-full border-b-2 border-black py-3 text-black font-semibold placeholder:text-black/80 focus:outline-none focus:border-[#2d5a27] transition"
+                    placeholder="+91">
+            </div>
 
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest opacity-60">Message</label>
-                            <textarea name="message" rows="4" required
-                                class="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-primary transition resize-none"
-                                placeholder="How can we help?"></textarea>
-                        </div>
+        </div>
 
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest opacity-60">Email</label>
-                            <input type="email" name="_replyto" required
-                                class="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-primary transition"
-                                placeholder="your@email.com">
-                        </div>
+        <div class="space-y-2">
+            <label class="text-[10px] uppercase tracking-widest font-bold text-black">Message</label>
+            <textarea name="message" rows="4" required
+                class="w-full border-b-2 border-black py-3 text-black font-semibold placeholder:text-black/80 focus:outline-none focus:border-[#2d5a27] transition resize-none"
+                placeholder="How can we help?"></textarea>
+        </div>
 
-                        <button type="submit"
-                            class="btn-premium w-full mt-6 uppercase tracking-widest text-xs font-bold">
-                            Send Inquiry
-                        </button>
+        <div class="space-y-2">
+            <label class="text-[10px] uppercase tracking-widest font-bold text-black">Email</label>
+            <input type="email" name="_replyto" required
+                class="w-full border-b-2 border-black py-3 text-black font-semibold placeholder:text-black/80 focus:outline-none focus:border-[#2d5a27] transition"
+                placeholder="your@email.com">
+        </div>
 
-                    </form>
-                </div>
+        <button type="submit"
+            class="btn-premium w-full mt-6 uppercase tracking-widest text-xs font-bold">
+            Send Inquiry
+        </button>
+
+    </form>
+</div>
                 <!-- Reviews Section -->
-                <div class="mt-20">
+                <div class="mt-20 border-l-2 border-[#2d5a27] pl-6">
                     <h3 class="text-2xl serif mb-6">Customer Reviews</h3>
 
                     <!-- Input -->
@@ -1102,13 +1120,28 @@
                 });
             });
     </script>
-    <!-- 💬 FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/918220957813" target="_blank"
-        class="fixed bottom-6 right-6 z-[999] w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition">
+    <script>
+window.addEventListener('scroll', () => {
+    const waBtn = document.getElementById('wa-btn');
+    if (!waBtn) return;
 
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
-            class="w-full h-full object-contain">
-    </a>
+    if (window.scrollY > 200) { // 👈 simple trigger
+        waBtn.style.opacity = "1";
+        waBtn.style.pointerEvents = "auto";
+    } else {
+        waBtn.style.opacity = "0";
+        waBtn.style.pointerEvents = "none";
+    }
+});
+</script>
+    <a href="https://wa.me/918220957813" target="_blank" id="wa-btn"
+   class="fixed bottom-6 right-6 z-[999] transition opacity-0 pointer-events-none hover:scale-110 duration-300">
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+         fill="#2d5a27" class="w-10 h-10 drop-shadow-md">
+        <path d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.89.754 5.61 2.07 7.97L0 32l7.83-2.05a15.94 15.94 0 0 0 8.17 2.24c8.836 0 16-7.164 16-16S24.836.396 16 .396zm0 29.06c-2.54 0-4.96-.67-7.06-1.94l-.5-.3-4.64 1.22 1.24-4.52-.33-.52a13.42 13.42 0 0 1-2.06-7.02c0-7.43 6.04-13.47 13.47-13.47s13.47 6.04 13.47 13.47-6.04 13.47-13.47 13.47zm7.38-10.13c-.4-.2-2.38-1.18-2.75-1.32-.37-.14-.64-.2-.9.2-.27.4-1.04 1.32-1.27 1.6-.23.27-.46.3-.86.1-.4-.2-1.7-.63-3.24-2-1.2-1.07-2-2.38-2.24-2.78-.23-.4-.02-.62.18-.82.18-.18.4-.46.6-.7.2-.23.27-.4.4-.67.13-.27.07-.5-.03-.7-.1-.2-.9-2.17-1.23-2.97-.32-.78-.65-.67-.9-.68h-.77c-.27 0-.7.1-1.07.5s-1.4 1.37-1.4 3.33 1.43 3.86 1.63 4.13c.2.27 2.8 4.27 6.78 5.98.95.41 1.7.66 2.28.84.96.3 1.83.26 2.52.16.77-.11 2.38-.97 2.72-1.9.33-.94.33-1.75.23-1.9-.1-.16-.36-.26-.76-.46z"/>
+    </svg>
+</a>
 </body>
 
 </html>
