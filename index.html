@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -7,7 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary: #1a3c34;
@@ -38,7 +41,10 @@
             width: 100%;
         }
 
-        h1, h2, h3, .serif {
+        h1,
+        h2,
+        h3,
+        .serif {
             font-family: 'Playfair Display', serif;
         }
 
@@ -89,15 +95,37 @@
         }
 
         /* Fluid Typography */
-        .h-xl { font-size: clamp(3rem, 10vw, 8rem); line-height: 0.9; }
-        .h-lg { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; }
-        .h-md { font-size: clamp(1.5rem, 4vw, 2.5rem); }
-        .p-lg { font-size: clamp(1rem, 1.2vw, 1.25rem); }
+        .h-xl {
+            font-size: clamp(3rem, 10vw, 8rem);
+            line-height: 0.9;
+        }
+
+        .h-lg {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1;
+        }
+
+        .h-md {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+        }
+
+        .p-lg {
+            font-size: clamp(1rem, 1.2vw, 1.25rem);
+        }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
 
         /* Animations */
         .reveal {
@@ -118,8 +146,8 @@
             left: 0;
             width: 100%;
             height: 120%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.1)), 
-                        url('cobg2.jpg') center/cover no-repeat;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)),
+                url('cobg2.jpg') center/cover no-repeat;
             z-index: -1;
             transform: translateY(0);
         }
@@ -176,8 +204,13 @@
             transform: scale(1.08);
         }
 
-        .bento-item.tall { grid-row: span 2; }
-        .bento-item.wide { grid-column: span 2; }
+        .bento-item.tall {
+            grid-row: span 2;
+        }
+
+        .bento-item.wide {
+            grid-column: span 2;
+        }
 
         @media (min-width: 1024px) {
             .bento-grid {
@@ -185,9 +218,19 @@
                 grid-auto-rows: 280px;
                 gap: 24px;
             }
-            .bento-item.lg-tall { grid-row: span 2; }
-            .bento-item.lg-wide { grid-column: span 2; }
-            .bento-item.lg-large { grid-column: span 2; grid-row: span 2; }
+
+            .bento-item.lg-tall {
+                grid-row: span 2;
+            }
+
+            .bento-item.lg-wide {
+                grid-column: span 2;
+            }
+
+            .bento-item.lg-large {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
         }
 
         /* Lightbox Overlay */
@@ -238,8 +281,10 @@
         .btn-premium::before {
             content: '';
             position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
             background: var(--primary);
             transition: left 0.4s ease;
             z-index: -1;
@@ -265,51 +310,68 @@
         }
 
         @media (max-width: 768px) {
-            .process-line { left: 24px; }
+            .process-line {
+                left: 24px;
+            }
         }
-        ::selection {
-    background: var(--primary); /* or var(--accent) if u want */
-    color: white;
-}
 
-::-moz-selection {
-    background: var(--primary);
-    color: white;
-}
-#nav-logo {
-    filter: brightness(0) invert(1); /* white at start */
-}
+        ::selection {
+            background: var(--primary);
+            /* or var(--accent) if u want */
+            color: white;
+        }
+
+        ::-moz-selection {
+            background: var(--primary);
+            color: white;
+        }
+
+        #nav-logo {
+            filter: brightness(0) invert(1);
+            /* white at start */
+        }
+
+        @media (min-width: 1024px) {
+            #map-container {
+                position: absolute;
+                right: 0;
+                top: 70vh;
+                width: 46.9%;
+                height: 40%;
+            }
+        }
     </style>
 </head>
+
 <body class="bg-[#fcfbf7]">
 
     <!-- Preloader -->
     <div id="preloader">
-        <div class="loader-content flex flex-col items-center justify-center h-full w-full text-center">
+        <div
+            class="loader-content relative flex flex-col items-center justify-center h-full w-full text-center overflow-hidden">
 
-    <!-- BIG LOGO -->
-    <img src="yj.png"
-     id="loader-logo"
-     alt="YJ Farms Logo"
-     class="w-40 md:w-44 lg:w-48 object-contain mb-6 transition duration-500 -translate-x-2 md:-translate-x-3 filter brightness-0">
+            <!-- BACKGROUND LOGO (WATERMARK) -->
+            <img src="yj.png" id="loader-logo" alt="YJ Farms Logo"
+                class="w-40 md:w-44 lg:w-48 object-contain mb-6 transition duration-500 -translate-x-2 md:-translate-x-3 filter brightness-0">
 
-    <!-- TEXT -->
-    <div class="text-primary font-bold tracking-tighter text-lg md:text-xl leading-none mb-6">
-        YESU JEEVIKKIRAR 
-        <span class="serif italic font-normal block text-xs md:text-sm">
-            Farms
-        </span>
-    </div>
+            <!-- FOREGROUND TEXT -->
+            <div
+                class="relative z-10 text-primary font-bold tracking-tight text-2xl md:text-4xl lg:text-5xl leading-tight mb-8">
+                YESU JEEVIKKIRAR
+                <span class="serif italic font-normal block text-lg md:text-2xl lg:text-3xl">
+                    Coconut Farms
+                </span>
+            </div>
 
-    <!-- LOADER BAR -->
-    <div class="loader-bar-container w-40 md:w-56 lg:w-64">
-        <div id="loader-bar"></div>
-    </div>
+            <!-- LOADER BAR -->
+            <div class="loader-bar-container w-40 md:w-56 lg:w-64 relative z-10">
+                <div id="loader-bar"></div>
+            </div>
 
-    <!-- PERCENT -->
-    <div id="loader-percent" class="mt-4">0%</div>
+            <!-- PERCENT -->
+            <div id="loader-percent" class="mt-4 relative z-10">0%</div>
 
-</div>
+        </div>
     </div>
 
     <!-- Lightbox -->
@@ -324,27 +386,28 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 w-full z-[100] py-6 px-6 md:px-12 flex justify-between items-center transition-all duration-500" id="navbar">
+    <nav class="fixed top-0 left-0 w-full z-[100] py-6 px-6 md:px-12 flex justify-between items-center transition-all duration-500"
+        id="navbar">
         <div class="flex items-center gap-3 md:gap-4">
 
-    <!-- Logo -->
-    <img src="yj.png"
-     id="nav-logo"
-     alt="YJ Farms Logo"
-     class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-contain scale-110 -translate-y-1 md:-translate-y-1.5">
+            <!-- Logo -->
+            <img src="yj.png" id="nav-logo" alt="YJ Farms Logo"
+                class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-contain scale-110 -translate-y-1 md:-translate-y-1.5">
 
-    <!-- Text -->
-    <div class="text-white mix-blend-difference font-bold tracking-tighter text-xl md:text-2xl lg:text-3xl leading-none">
-        YESU JEEVIKKIRAR 
-        <span class="serif italic font-normal block md:inline text-sm md:text-xl lg:text-2xl">
-            Farms
-        </span>
-    </div>
+            <!-- Text -->
+            <div
+                class="text-white mix-blend-difference font-bold tracking-tighter text-xl md:text-2xl lg:text-3xl leading-none">
+                YESU JEEVIKKIRAR
+                <span class="serif italic font-normal block md:inline text-sm md:text-xl lg:text-2xl">
+                    Coconut Farms
+                </span>
+            </div>
 
-</div>
-        
+        </div>
+
         <!-- Desktop Nav -->
-        <div class="hidden lg:flex gap-10 text-[10px] uppercase tracking-[0.2em] font-medium text-white mix-blend-difference">
+        <div
+            class="hidden lg:flex gap-10 text-[10px] uppercase tracking-[0.2em] font-medium text-white mix-blend-difference">
             <a href="#home" class="hover:opacity-60 transition">Home</a>
             <a href="#why" class="hover:opacity-60 transition">Why Us</a>
             <a href="#about" class="hover:opacity-60 transition">Story</a>
@@ -356,7 +419,8 @@
 
         <!-- Mobile Menu Toggle (Only visible on Mobile) -->
         <button class="lg:hidden text-white mix-blend-difference z-[110] p-2" id="menu-toggle">
-            <svg id="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <svg id="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5">
                 <line x1="3" y1="12" x2="21" y2="12"></line>
                 <line x1="3" y1="6" x2="21" y2="6"></line>
                 <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -365,7 +429,8 @@
     </nav>
 
     <!-- Mobile Fullscreen Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[#1a3c34] z-[105] flex flex-col justify-center items-center gap-8 text-white lg:hidden">
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-[#1a3c34] z-[105] flex flex-col justify-center items-center gap-8 text-white lg:hidden">
         <a href="#home" class="h-md serif mobile-link">Home</a>
         <a href="#why" class="h-md serif mobile-link">Why Us</a>
         <a href="#about" class="h-md serif mobile-link">Story</a>
@@ -379,108 +444,115 @@
     <section id="home" class="relative h-screen w-full flex items-center px-6 md:px-12 overflow-hidden">
         <div class="hero-bg" id="hero-bg"></div>
         <div class="max-w-6xl w-full z-10 text-white">
-            <p class="uppercase tracking-[0.4em] text-[10px] md:text-xs mb-6 opacity-80 reveal">Est. 1998 — Organic Heritage</p>
+            <p class="uppercase tracking-[0.4em] text-[10px] md:text-xs mb-6 opacity-80 reveal">Est. 1998 — Organic
+                Heritage</p>
             <h1 class="h-xl mb-8 reveal">Pure Coconut.<br><span class="serif italic">From Nature to Life.</span></h1>
-            <p class="p-lg max-w-md mb-10 opacity-90 reveal">Yesu Jeevikkirar Farms brings the soul of the tropics to your doorstep through sustainable farming and artisanal care.</p>
+            <p class="p-lg max-w-md mb-10 opacity-90 reveal">Yesu Jeevikkirar Farms brings the soul of the tropics to
+                your doorstep through sustainable farming and artisanal care.</p>
             <div class="reveal">
-                <a href="#products" class="btn-premium !border-white !text-white hover:!text-primary inline-block w-full md:w-auto">Explore Products</a>
+                <a href="#products"
+                    class="btn-premium !border-white !text-white hover:!text-primary inline-block w-full md:w-auto">Explore
+                    Products</a>
             </div>
         </div>
     </section>
 
     <!-- 2. Why Us Section -->
     <section id="why" class="relative py-24 md:py-40 px-6 md:px-12 bg-white overflow-hidden">
-    
-    <!-- Faded Background Text -->
-    <div class="absolute top-10 left-0 w-full text-center text-[5rem] md:text-[10rem] font-bold text-gray-100 opacity-20 pointer-events-none select-none">
-        PURITY
-    </div>
 
-    <div class="max-w-7xl mx-auto relative z-10">
-        
-        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-            
-            <div class="max-w-2xl">
-                <span class="text-xs uppercase tracking-widest text-accent font-bold mb-4 block">
-                    Our Philosophy
-                </span>
-
-                <h2 class="text-3xl md:text-5xl lg:text-6xl serif leading-tight">
-                    Why discerning brands<br>choose our harvest.
-                </h2>
-            </div>
-
-            <div class="pb-4 max-w-xs">
-                
-                <!-- Divider -->
-                <div class="w-16 h-[1px] bg-gray-300 mb-4"></div>
-
-                <!-- Quote -->
-                <p class="italic text-gray-400 mb-4">
-                    "Purity is not a claim — it’s a process."
-                </p>
-
-                <!-- Main Text -->
-                <p class="text-base md:text-lg text-gray-500">
-                    We don't just grow coconuts; we cultivate a legacy of purity.
-                </p>
-            </div>
+        <!-- Faded Background Text -->
+        <div
+            class="absolute top-10 left-0 w-full text-center text-[5rem] md:text-[10rem] font-bold text-gray-100 opacity-20 pointer-events-none select-none">
+            PURITY
         </div>
 
-        <!-- Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            
-            <div class="reveal">
-                <div class="text-3xl md:text-4xl font-bold serif text-accent mb-4">01</div>
-                <h3 class="text-lg md:text-xl font-bold mb-4 uppercase tracking-tight">
-                    Natural Farming
-                </h3>
-                <p class="text-sm md:text-base text-gray-600">
-                    Strictly organic fertilizers and traditional soil management techniques.
-                </p>
+        <div class="max-w-7xl mx-auto relative z-10">
+
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+
+                <div class="max-w-2xl">
+                    <span class="text-xs uppercase tracking-widest text-accent font-bold mb-4 block">
+                        Our Philosophy
+                    </span>
+
+                    <h2 class="text-3xl md:text-5xl lg:text-6xl serif leading-tight">
+                        Why discerning brands<br>choose our harvest.
+                    </h2>
+                </div>
+
+                <div class="pb-4 max-w-xs">
+
+                    <!-- Divider -->
+                    <div class="w-16 h-[1px] bg-gray-300 mb-4"></div>
+
+                    <!-- Quote -->
+                    <p class="italic text-gray-400 mb-4">
+                        "Purity is not a claim — it’s a process."
+                    </p>
+
+                    <!-- Main Text -->
+                    <p class="text-base md:text-lg text-gray-500">
+                        We don't just grow coconuts; we cultivate a legacy of purity.
+                    </p>
+                </div>
             </div>
 
-            <div class="reveal" style="transition-delay: 0.1s;">
-                <div class="text-3xl md:text-4xl font-bold serif text-accent mb-4">02</div>
-                <h3 class="text-lg md:text-xl font-bold mb-4 uppercase tracking-tight">
-                    Quality Check
-                </h3>
-                <p class="text-sm md:text-base text-gray-600">
-                    Each coconut is hand-picked at its peak maturity for maximum nutrient density.
-                </p>
-            </div>
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
-            <div class="reveal" style="transition-delay: 0.2s;">
-                <div class="text-3xl md:text-4xl font-bold serif text-accent mb-4">03</div>
-                <h3 class="text-lg md:text-xl font-bold mb-4 uppercase tracking-tight">
-                    Deep Experience
-                </h3>
-                <p class="text-sm md:text-base text-gray-600">
-                    Over 30 years of mastery in the art of coconut cultivation and processing.
-                </p>
-            </div>
+                <div class="reveal">
+                    <div class="text-3xl md:text-4xl font-bold serif text-accent mb-4">01</div>
+                    <h3 class="text-lg md:text-xl font-bold mb-4 uppercase tracking-tight">
+                        Natural Farming
+                    </h3>
+                    <p class="text-sm md:text-base text-gray-600">
+                        Strictly organic fertilizers and traditional soil management techniques.
+                    </p>
+                </div>
 
-            <div class="reveal" style="transition-delay: 0.3s;">
-                <div class="text-3xl md:text-4xl font-bold serif text-accent mb-4">04</div>
-                <h3 class="text-lg md:text-xl font-bold mb-4 uppercase tracking-tight">
-                    Global Trust
-                </h3>
-                <p class="text-sm md:text-base text-gray-600">
-                    Preferred supplier for luxury oil brands and eco-conscious food chains.
-                </p>
-            </div>
+                <div class="reveal" style="transition-delay: 0.1s;">
+                    <div class="text-3xl md:text-4xl font-bold serif text-accent mb-4">02</div>
+                    <h3 class="text-lg md:text-xl font-bold mb-4 uppercase tracking-tight">
+                        Quality Check
+                    </h3>
+                    <p class="text-sm md:text-base text-gray-600">
+                        Each coconut is hand-picked at its peak maturity for maximum nutrient density.
+                    </p>
+                </div>
 
+                <div class="reveal" style="transition-delay: 0.2s;">
+                    <div class="text-3xl md:text-4xl font-bold serif text-accent mb-4">03</div>
+                    <h3 class="text-lg md:text-xl font-bold mb-4 uppercase tracking-tight">
+                        Deep Experience
+                    </h3>
+                    <p class="text-sm md:text-base text-gray-600">
+                        Over 30 years of mastery in the art of coconut cultivation and processing.
+                    </p>
+                </div>
+
+                <div class="reveal" style="transition-delay: 0.3s;">
+                    <div class="text-3xl md:text-4xl font-bold serif text-accent mb-4">04</div>
+                    <h3 class="text-lg md:text-xl font-bold mb-4 uppercase tracking-tight">
+                        Global Trust
+                    </h3>
+                    <p class="text-sm md:text-base text-gray-600">
+                        Preferred supplier for luxury oil brands and eco-conscious food chains.
+                    </p>
+                </div>
+
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- 3. About Us Section -->
     <section id="about" class="py-24 md:py-40 px-6 md:px-12 bg-beige/30">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div class="order-2 lg:order-1 reveal">
                 <div class="relative">
-                    <img src="about.jpg" alt="Farmer" class="w-full h-[400px] md:h-[600px] object-cover rounded-sm  hover:grayscale-0 transition duration-1000">
-                    <div class="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 w-48 h-48 md:w-64 md:h-64 bg-primary p-6 md:p-8 text-white">
+                    <img src="about.jpg" alt="Farmer"
+                        class="w-full h-[400px] md:h-[600px] object-cover rounded-sm  hover:grayscale-0 transition duration-1000">
+                    <div
+                        class="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 w-48 h-48 md:w-64 md:h-64 bg-primary p-6 md:p-8 text-white">
                         <p class="serif italic text-xl md:text-2xl mb-4">"The earth provides for those who listen."</p>
                         <p class="text-[10px] uppercase tracking-widest opacity-60">— Mr. C. Solomon</p>
                     </div>
@@ -490,28 +562,40 @@
                 <span class="text-xs uppercase tracking-widest text-accent font-bold mb-6 block">Our Journey</span>
                 <h2 class="h-lg serif mb-8">Rooted in Passion,<br>Grown with Care.</h2>
                 <div class="space-y-6 text-gray-700 p-lg">
-                    <p>Founded on a small family plot, Yesu Jeevikkirar Farms has evolved into a leading ecosystem for organic coconut cultivation. Our story is one of patience and respect for the natural cycles.</p>
-                    <p>We believe that luxury lies in simplicity. By removing chemicals and industrial shortcuts, we allow the true character of the coconut to shine through in every harvest.</p>
-                    
+                    <p>Founded on a small family plot, Yesu Jeevikkirar Farms has evolved into a leading ecosystem for
+                        organic coconut cultivation. Our story is one of patience and respect for the natural cycles.
+                    </p>
+                    <p>We believe that luxury lies in simplicity. By removing chemicals and industrial shortcuts, we
+                        allow the true character of the coconut to shine through in every harvest.</p>
+
                     <div class="pt-8 mt-8 border-t border-gray-300">
-                        <h3 class="font-bold text-primary text-xl md:text-2xl mb-4 serif">Three Decades of Excellence in Coconut Procurement & Supply.</h3>
-                        <p class="mb-4 text-base">Founded by Mr. C. Solomon, Yesu Jeevikkirar Coconut has been a cornerstone of the coconut industry in Tamil Nadu for over 30 years. What began as a local initiative has evolved into a robust procurement and supply network, built on the principles of transparency, quality, and direct-from-farm sourcing.</p>
-                        <p class="mb-6 text-base">Managed today by our partners, Mr. Joseph and Mr. Samuvel, with strategic coordination by Mr. Arulanandam, we specialize in bridging the gap between the lush groves of Tamil Nadu and the global industrial market.</p>
-                        
-                        <strong class="text-primary block mb-2 uppercase tracking-widest text-xs">Our Core Advantage</strong>
-                        <p class="text-base">We work directly at the farm gate. By managing our own sourcing network, we eliminate unnecessary middlemen, ensuring our industrial partners receive consistent, high-quality raw materials year-round.</p>
+                        <h3 class="font-bold text-primary text-xl md:text-2xl mb-4 serif">Three Decades of Excellence in
+                            Coconut Procurement & Supply.</h3>
+                        <p class="mb-4 text-base">Founded by Mr. C. Solomon, Yesu Jeevikkirar Coconut has been a
+                            cornerstone of the coconut industry in Tamil Nadu for over 30 years. What began as a local
+                            initiative has evolved into a robust procurement and supply network, built on the principles
+                            of transparency, quality, and direct-from-farm sourcing.</p>
+                        <p class="mb-6 text-base">Managed today by our partners, Mr. Joseph and Mr. Samuvel, with
+                            strategic coordination by Mr. Arulanandam, we specialize in bridging the gap between the
+                            lush groves of Tamil Nadu and the global industrial market.</p>
+
+                        <strong class="text-primary block mb-2 uppercase tracking-widest text-xs">Our Core
+                            Advantage</strong>
+                        <p class="text-base">We work directly at the farm gate. By managing our own sourcing network, we
+                            eliminate unnecessary middlemen, ensuring our industrial partners receive consistent,
+                            high-quality raw materials year-round.</p>
                     </div>
                 </div>
-               <div class="mt-12 flex gap-12">
-    <div>
-        <div class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold">30+</div>
-        <div class="text-sm md:text-base lg:text-lg uppercase tracking-[0.2em] mt-2">Years Active</div>
-    </div>
-    <div>
-        <div class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold">100%</div>
-        <div class="text-sm md:text-base lg:text-lg uppercase tracking-[0.2em] mt-2">Organic</div>
-    </div>
-</div>
+                <div class="mt-12 flex gap-12">
+                    <div>
+                        <div class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold">30+</div>
+                        <div class="text-sm md:text-base lg:text-lg uppercase tracking-[0.2em] mt-2">Years Active</div>
+                    </div>
+                    <div>
+                        <div class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold">100%</div>
+                        <div class="text-sm md:text-base lg:text-lg uppercase tracking-[0.2em] mt-2">Organic</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -520,10 +604,13 @@
     <section id="products" class="py-24 md:py-40 px-6 md:px-12 bg-white">
         <div class="max-w-7xl mx-auto text-center mb-20">
             <h2 class="h-lg serif mb-4 reveal">Premium Produce</h2>
-            <p class="p-lg text-gray-500 reveal mb-10">Explore our versatile range of high-grade coconut derivatives.</p>
-            
-            <div class="inline-block text-left bg-gray-50 p-6 md:p-8 rounded-lg reveal border border-gray-100 shadow-sm mb-8">
-                <h3 class="text-xs uppercase tracking-widest text-accent font-bold mb-6 text-center">Our Product Portfolio</h3>
+            <p class="p-lg text-gray-500 reveal mb-10">Explore our versatile range of high-grade coconut derivatives.
+            </p>
+
+            <div
+                class="inline-block text-left bg-gray-50 p-6 md:p-8 rounded-lg reveal border border-gray-100 shadow-sm mb-8">
+                <h3 class="text-xs uppercase tracking-widest text-accent font-bold mb-6 text-center">Our Product
+                    Portfolio</h3>
                 <div class="flex flex-col md:flex-row gap-6 md:gap-12 text-sm text-gray-700">
                     <div><strong class="text-primary block mb-1">Fiber & Substrates</strong> Coconut Husk</div>
                     <div class="hidden md:block w-px bg-gray-200"></div>
@@ -535,46 +622,46 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-    <div class="product-card reveal" style="transition-delay: 0.1s;">
-        <img src="3.jpg" class="w-full h-full object-cover">
-        <div class="product-overlay absolute inset-0 flex flex-col justify-end p-6 text-white">
-            <h3 class="text-xl serif mb-1">Coconut</h3>
-            <p class="text-sm opacity-80">Fresh, naturally grown coconuts packed with rich water and meat.</p>
-        </div>
-    </div>
+            <div class="product-card reveal" style="transition-delay: 0.1s;">
+                <img src="3.jpg" class="w-full h-full object-cover">
+                <div class="product-overlay absolute inset-0 flex flex-col justify-end p-6 text-white">
+                    <h3 class="text-xl serif mb-1">Coconut</h3>
+                    <p class="text-sm opacity-80">Fresh, naturally grown coconuts packed with rich water and meat.</p>
+                </div>
+            </div>
 
-    <div class="product-card reveal">
-        <img src="8.jpg" class="w-full h-full object-cover">
-        <div class="product-overlay absolute inset-0 flex flex-col justify-end p-6 text-white">
-            <h3 class="text-xl serif mb-1">Copra</h3>
-            <p class="text-sm opacity-80">Sun-dried coconut kernels ideal for oil extraction and trade.</p>
-        </div>
-    </div>
+            <div class="product-card reveal">
+                <img src="8.jpg" class="w-full h-full object-cover">
+                <div class="product-overlay absolute inset-0 flex flex-col justify-end p-6 text-white">
+                    <h3 class="text-xl serif mb-1">Copra</h3>
+                    <p class="text-sm opacity-80">Sun-dried coconut kernels ideal for oil extraction and trade.</p>
+                </div>
+            </div>
 
-    <div class="product-card reveal" style="transition-delay: 0.1s;">
-        <img src="4.jpg" class="w-full h-full object-cover">
-        <div class="product-overlay absolute inset-0 flex flex-col justify-end p-6 text-white">
-            <h3 class="text-xl serif mb-1">Coconut Shell</h3>
-            <p class="text-sm opacity-80">Durable shells perfect for crafts, charcoal, and eco products.</p>
-        </div>
-    </div>
+            <div class="product-card reveal" style="transition-delay: 0.1s;">
+                <img src="4.jpg" class="w-full h-full object-cover">
+                <div class="product-overlay absolute inset-0 flex flex-col justify-end p-6 text-white">
+                    <h3 class="text-xl serif mb-1">Coconut Shell</h3>
+                    <p class="text-sm opacity-80">Durable shells perfect for crafts, charcoal, and eco products.</p>
+                </div>
+            </div>
 
-    <div class="product-card reveal" style="transition-delay: 0.2s;">
-        <img src="1.jpg" class="w-full h-full object-cover">
-        <div class="product-overlay absolute inset-0 flex flex-col justify-end p-6 text-white">
-            <h3 class="text-xl serif mb-1">Husk</h3>
-            <p class="text-sm opacity-80">Fibrous outer layer used for ropes, mats, and coir products.</p>
-        </div>
-    </div>
+            <div class="product-card reveal" style="transition-delay: 0.2s;">
+                <img src="1.jpg" class="w-full h-full object-cover">
+                <div class="product-overlay absolute inset-0 flex flex-col justify-end p-6 text-white">
+                    <h3 class="text-xl serif mb-1">Husk</h3>
+                    <p class="text-sm opacity-80">Fibrous outer layer used for ropes, mats, and coir products.</p>
+                </div>
+            </div>
 
-    <div class="product-card reveal" style="transition-delay: 0.3s;">
-        <img src="oil4.jpeg" class="w-full h-full object-cover">
-        <div class="product-overlay absolute inset-0 flex flex-col justify-end p-6 text-white">
-            <h3 class="text-xl serif mb-1">Coconut Oil</h3>
-            <p class="text-sm opacity-80">Pure, cold-pressed oil known for its health and hair benefits.</p>
+            <div class="product-card reveal" style="transition-delay: 0.3s;">
+                <img src="oil4.jpeg" class="w-full h-full object-cover">
+                <div class="product-overlay absolute inset-0 flex flex-col justify-end p-6 text-white">
+                    <h3 class="text-xl serif mb-1">Coconut Oil</h3>
+                    <p class="text-sm opacity-80">Pure, cold-pressed oil known for its health and hair benefits.</p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
     </section>
 
     <!-- 5. Process Section -->
@@ -588,7 +675,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center mb-32 md:mb-40 relative z-10">
                 <div class="md:text-right reveal px-6 md:px-0">
                     <h3 class="h-md serif mb-6">Stage 01</h3>
-                    <p class="p-lg opacity-70">We harvest mature coconuts and dry them naturally to ensure high quality for our oil.</p>
+                    <p class="p-lg opacity-70">We harvest mature coconuts and dry them naturally to ensure high quality
+                        for our oil.</p>
                 </div>
                 <div class="reveal" style="transition-delay: 0.2s;">
                     <img src="7.jpg" class="w-full aspect-video object-cover rounded-sm shadow-2xl">
@@ -601,13 +689,15 @@
                 </div>
                 <div class="order-1 md:order-2 reveal px-6 md:px-0">
                     <h3 class="h-md serif mb-6">Stage 02</h3>
-                    <p class="p-lg opacity-70">Freshly split coconuts are sun-dried to transform the white kernels into high-quality, nutrient-rich copra.</p>
+                    <p class="p-lg opacity-70">Freshly split coconuts are sun-dried to transform the white kernels into
+                        high-quality, nutrient-rich copra.</p>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center mb-32 md:mb-40 relative z-10">
                 <div class="md:text-right reveal px-6 md:px-0">
                     <h3 class="h-md serif mb-6">Stage 03</h3>
-                    <p class="p-lg opacity-70">The dried kernels naturally detach from their shells, becoming concentrated copra ready for pure oil extraction.</p>
+                    <p class="p-lg opacity-70">The dried kernels naturally detach from their shells, becoming
+                        concentrated copra ready for pure oil extraction.</p>
                 </div>
                 <div class="reveal" style="transition-delay: 0.2s;">
                     <img src="8.jpg" class="w-full aspect-video object-cover rounded-sm shadow-2xl">
@@ -620,13 +710,15 @@
                 </div>
                 <div class="order-1 md:order-2 reveal px-6 md:px-0">
                     <h3 class="h-md serif mb-6">Stage 04</h3>
-                    <p class="p-lg opacity-70">The fully dried copra is sorted and piled high, awaiting final milling for pure oil extraction.</p>
+                    <p class="p-lg opacity-70">The fully dried copra is sorted and piled high, awaiting final milling
+                        for pure oil extraction.</p>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center mb-32 md:mb-40 relative z-10">
                 <div class="md:text-right reveal px-6 md:px-0">
                     <h3 class="h-md serif mb-6">Stage 05</h3>
-                    <p class="p-lg opacity-70">Our premium oil is cold-pressed and bottled, preserving its natural clarity and organic nutritional benefits.</p>
+                    <p class="p-lg opacity-70">Our premium oil is cold-pressed and bottled, preserving its natural
+                        clarity and organic nutritional benefits.</p>
                 </div>
                 <div class="reveal" style="transition-delay: 0.2s;">
                     <img src="oil2.jpeg" class="w-full aspect-video object-cover rounded-sm shadow-2xl">
@@ -650,7 +742,8 @@
                 <div class="bento-item tall reveal" style="transition-delay: 0.2s;" onclick="openLightbox(this)">
                     <img src="3.jpg" alt="Coconut">
                 </div>
-                <div class="bento-item wide lg-wide reveal" style="transition-delay: 0.3s;" onclick="openLightbox(this)">
+                <div class="bento-item wide lg-wide reveal" style="transition-delay: 0.3s;"
+                    onclick="openLightbox(this)">
                     <img src="4.jpg" alt="Workers">
                 </div>
                 <div class="bento-item reveal" style="transition-delay: 0.4s;" onclick="openLightbox(this)">
@@ -678,17 +771,18 @@
     <!-- 7. Contact Section -->
     <section id="contact" class="py-24 md:py-40 px-6 md:px-12 bg-beige/30">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 relative">
                 <div class="reveal">
                     <h2 class="h-lg serif mb-12">Let's cultivate<br>a connection.</h2>
                     <div class="space-y-8">
                         <div>
                             <p class="text-xs uppercase tracking-widest text-accent mb-2">Location</p>
-                            <p class="text-lg md:text-xl">Yesu Jeevikkirar Farms,<br>7/90, Andikattuthottam, Chennimalai Palayam,<br>Keeranur, Tiruppur, TN.</p>
+                            <p class="text-lg md:text-xl">Yesu Jeevikkirar Farms,<br>7/90, Andikattuthottam, Chennimalai
+                                Palayam,<br>Keeranur, Tiruppur, TN.</p>
                         </div>
                         <div>
                             <p class="text-xs uppercase tracking-widest text-accent mb-2">Reach Out</p>
-                            <p class="text-lg md:text-xl">+91 82209 57813<br>hello@yjfarms.com</p>
+                            <p class="text-lg md:text-xl">+91 82209 57813<br>yjcoconutfarms@gmail.com</p>
                         </div>
                         <div>
                             <p class="text-xs uppercase tracking-widest text-accent mb-2">GSTIN</p>
@@ -698,36 +792,73 @@
                 </div>
 
                 <div class="bg-white p-8 md:p-12 shadow-sm reveal">
-    <form id="contactForm" action="https://formspree.io/f/xojpdywj" method="POST" class="space-y-6">
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="space-y-2">
-                <label class="text-[10px] uppercase tracking-widest opacity-60">Name</label>
-                <input type="text" name="name" required class="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-primary transition" placeholder="Full Name">
-            </div>
+                    <form action="https://formspree.io/f/xjgjzlwq" method="POST" class="space-y-6">
 
-            <div class="space-y-2">
-                <label class="text-[10px] uppercase tracking-widest opacity-60">Phone</label>
-                <input type="tel" name="phone" required class="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-primary transition" placeholder="+91">
-            </div>
-        </div>
+                        <!-- hidden config -->
+                        <input type="hidden" name="_subject" value="New Inquiry from Website">
+                        <input type="hidden" name="_captcha" value="false">
 
-        <div class="space-y-2">
-            <label class="text-[10px] uppercase tracking-widest opacity-60">Message</label>
-            <textarea name="message" rows="4" required class="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-primary transition resize-none" placeholder="How can we help?"></textarea>
-        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        <!-- optional email field (recommended fr) -->
-        <div class="space-y-2">
-            <label class="text-[10px] uppercase tracking-widest opacity-60">Email</label>
-            <input type="email" name="email" required class="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-primary transition" placeholder="your@email.com">
-        </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-widest opacity-60">Name</label>
+                                <input type="text" name="name" required
+                                    class="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-primary transition"
+                                    placeholder="Full Name">
+                            </div>
 
-        <button type="submit" class="btn-premium w-full mt-6 uppercase tracking-widest text-xs font-bold">
-            Send Inquiry
-        </button>
-    </form>
-</div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-widest opacity-60">Phone</label>
+                                <input type="tel" name="phone" required
+                                    class="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-primary transition"
+                                    placeholder="+91">
+                            </div>
+
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest opacity-60">Message</label>
+                            <textarea name="message" rows="4" required
+                                class="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-primary transition resize-none"
+                                placeholder="How can we help?"></textarea>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest opacity-60">Email</label>
+                            <input type="email" name="_replyto" required
+                                class="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-primary transition"
+                                placeholder="your@email.com">
+                        </div>
+
+                        <button type="submit"
+                            class="btn-premium w-full mt-6 uppercase tracking-widest text-xs font-bold">
+                            Send Inquiry
+                        </button>
+
+                    </form>
+                </div>
+                <!-- Reviews Section -->
+                <div class="mt-20">
+                    <h3 class="text-2xl serif mb-6">Customer Reviews</h3>
+
+                    <!-- Input -->
+                    <div class="flex gap-4 mb-6">
+                        <input id="reviewInput" type="text" placeholder="Drop your thoughts..."
+                            class="flex-1 border-b border-gray-300 py-2 focus:outline-none">
+                        <button onclick="postReview()" class="btn-premium text-xs px-6">Post</button>
+                    </div>
+
+                    <!-- Reviews List -->
+                    <div id="reviewsList" class="space-y-4 max-h-60 overflow-y-auto"></div>
+
+                </div>
+                <!-- Google Map -->
+                <div id="map-container" class="mt-16 w-full h-[300px] lg:h-[400px]">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.398279457936!2d77.5428882!3d11.083665199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba90bf1f1fe4efd%3A0x140ce2c00ba7a95c!2zWWVzdSBKZWV2aWtraXJhciBDb2NvbnV0IPCfpaXwn4y0!5e0!3m2!1sen!2sin!4v1777197870342!5m2!1sen!2sin"
+                        class="w-full h-full border-0" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -736,95 +867,90 @@
     <footer class="py-12 px-6 md:px-12 bg-white border-t border-beige">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="text-primary font-bold tracking-tighter text-lg leading-none text-center md:text-left">
-                YESU JEEVIKKIRAR <span class="serif italic font-normal block md:inline text-xs">Farms</span>
+                YESU JEEVIKKIRAR <span class="serif italic font-normal block md:inline text-xs">Coconut Farms</span>
             </div>
-            <p class="text-[8px] uppercase tracking-widest opacity-40 text-center">© 2024 YESU JEEVIKKIRAR FARMS.</p>
-            <div class="flex gap-6">
-    <a href="https://wa.me/918220957813" target="_blank" class="text-black">
-        <svg width="18" height="18" fill="currentColor" viewBox="0 0 32 32">
-            <path d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.89.754 5.61 2.07 7.97L0 32l7.83-2.05a15.94 15.94 0 0 0 8.17 2.24c8.836 0 16-7.164 16-16S24.836.396 16 .396zm0 29.06c-2.54 0-4.96-.67-7.06-1.94l-.5-.3-4.64 1.22 1.24-4.52-.33-.52a13.42 13.42 0 0 1-2.06-7.02c0-7.43 6.04-13.47 13.47-13.47s13.47 6.04 13.47 13.47-6.04 13.47-13.47 13.47zm7.38-10.13c-.4-.2-2.38-1.18-2.75-1.32-.37-.14-.64-.2-.9.2-.27.4-1.04 1.32-1.27 1.6-.23.27-.46.3-.86.1-.4-.2-1.7-.63-3.24-2-1.2-1.07-2-2.38-2.24-2.78-.23-.4-.02-.62.18-.82.18-.18.4-.46.6-.7.2-.23.27-.4.4-.67.13-.27.07-.5-.03-.7-.1-.2-.9-2.17-1.23-2.97-.32-.78-.65-.67-.9-.68h-.77c-.27 0-.7.1-1.07.5s-1.4 1.37-1.4 3.33 1.43 3.86 1.63 4.13c.2.27 2.8 4.27 6.78 5.98.95.41 1.7.66 2.28.84.96.3 1.83.26 2.52.16.77-.11 2.38-.97 2.72-1.9.33-.94.33-1.75.23-1.9-.1-.16-.36-.26-.76-.46z"/>
-        </svg>
-    </a>
-</div>
+            <p class="text-[8px] uppercase tracking-widest opacity-40 text-center">© 2024 YESU JEEVIKKIRAR FARMS.
+                @yjfarms.in</p>
+
         </div>
     </footer>
 
     <script>
         // Preloader (SMOOTH + MIN TIME)
-window.addEventListener('DOMContentLoaded', () => {
-    const preloader = document.getElementById('preloader');
-    const loaderBar = document.getElementById('loader-bar');
-    const loaderPercent = document.getElementById('loader-percent');
+        window.addEventListener('DOMContentLoaded', () => {
+            const preloader = document.getElementById('preloader');
+            const loaderBar = document.getElementById('loader-bar');
+            const loaderPercent = document.getElementById('loader-percent');
 
-    const images = Array.from(document.querySelectorAll('img'));
+            const images = Array.from(document.querySelectorAll('img'));
 
-    // Add background image
-    const bgImg = new Image();
-    bgImg.src = 'cobg2.jpg';
-    images.push(bgImg);
+            // Add background image
+            const bgImg = new Image();
+            bgImg.src = 'cobg2.jpg';
+            images.push(bgImg);
 
-    let total = images.length;
-    let loaded = 0;
-    let progress = 0;
+            let total = images.length;
+            let loaded = 0;
+            let progress = 0;
 
-    const MIN_LOAD_TIME = 2000; // 👈 force 2 sec minimum
-    const startTime = Date.now();
+            const MIN_LOAD_TIME = 2000; // 👈 force 2 sec minimum
+            const startTime = Date.now();
 
-    function updateReal() {
-        loaded++;
-    }
+            function updateReal() {
+                loaded++;
+            }
 
-    images.forEach(img => {
-        if (img.complete) updateReal();
-        else {
-            img.addEventListener('load', updateReal);
-            img.addEventListener('error', updateReal);
-        }
-    });
+            images.forEach(img => {
+                if (img.complete) updateReal();
+                else {
+                    img.addEventListener('load', updateReal);
+                    img.addEventListener('error', updateReal);
+                }
+            });
 
-    const interval = setInterval(() => {
-        let realPercent = (loaded / total) * 100;
+            const interval = setInterval(() => {
+                let realPercent = (loaded / total) * 100;
 
-        // time-based progress (forces smooth counting)
-        let timeElapsed = Date.now() - startTime;
-        let timePercent = (timeElapsed / MIN_LOAD_TIME) * 100;
+                // time-based progress (forces smooth counting)
+                let timeElapsed = Date.now() - startTime;
+                let timePercent = (timeElapsed / MIN_LOAD_TIME) * 100;
 
-        // take the LOWER one so it doesn’t jump instantly
-        let target = Math.min(realPercent, timePercent);
+                // take the LOWER one so it doesn’t jump instantly
+                let target = Math.min(realPercent, timePercent);
 
-        // smooth increment
-        progress += (target - progress) * 0.1;
+                // smooth increment
+                progress += (target - progress) * 0.1;
 
-        loaderBar.style.width = progress + '%';
-        loaderPercent.innerText = Math.floor(progress) + '%';
+                loaderBar.style.width = progress + '%';
+                loaderPercent.innerText = Math.floor(progress) + '%';
 
-        if (progress >= 99 && loaded === total && timeElapsed >= MIN_LOAD_TIME) {
-            clearInterval(interval);
+                if (progress >= 99 && loaded === total && timeElapsed >= MIN_LOAD_TIME) {
+                    clearInterval(interval);
 
-            loaderBar.style.width = '100%';
-            loaderPercent.innerText = '100%';
+                    loaderBar.style.width = '100%';
+                    loaderPercent.innerText = '100%';
 
+                    setTimeout(() => {
+                        preloader.style.opacity = '0';
+                        preloader.style.visibility = 'hidden';
+                    }, 300);
+                }
+            }, 50);
+
+            // safety fallback
             setTimeout(() => {
+                loaderBar.style.width = '100%';
+                loaderPercent.innerText = '100%';
                 preloader.style.opacity = '0';
                 preloader.style.visibility = 'hidden';
-            }, 300);
-        }
-    }, 50);
-
-    // safety fallback
-    setTimeout(() => {
-        loaderBar.style.width = '100%';
-        loaderPercent.innerText = '100%';
-        preloader.style.opacity = '0';
-        preloader.style.visibility = 'hidden';
-    }, 6000);
-});
+            }, 6000);
+        });
         // Lightbox Logic
         function openLightbox(element) {
             const img = element.querySelector('img');
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
-            
+
             lightboxImg.src = img.src;
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -852,35 +978,35 @@ window.addEventListener('DOMContentLoaded', () => {
 
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
-    const nav = document.getElementById('navbar');
-    const logo = document.getElementById('nav-logo');
+            const nav = document.getElementById('navbar');
+            const logo = document.getElementById('nav-logo');
 
-    if (window.scrollY > 50) {
-        nav.classList.add('bg-white', 'shadow-sm', 'py-4');
-        nav.classList.remove('py-6');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white', 'shadow-sm', 'py-4');
+                nav.classList.remove('py-6');
 
-        nav.querySelectorAll('a, div, button').forEach(el => 
-            el.classList.remove('text-white', 'mix-blend-difference')
-        );
+                nav.querySelectorAll('a, div, button').forEach(el =>
+                    el.classList.remove('text-white', 'mix-blend-difference')
+                );
 
-        // 👇 restore original logo color
-        logo.style.filter = 'brightness(0)';
+                // 👇 restore original logo color
+                logo.style.filter = 'brightness(0)';
 
-    } else {
-        nav.classList.remove('bg-white', 'shadow-sm', 'py-4');
-        nav.classList.add('py-6');
+            } else {
+                nav.classList.remove('bg-white', 'shadow-sm', 'py-4');
+                nav.classList.add('py-6');
 
-        nav.querySelectorAll('a, div, button').forEach(el => 
-            el.classList.add('text-white', 'mix-blend-difference')
-        );
+                nav.querySelectorAll('a, div, button').forEach(el =>
+                    el.classList.add('text-white', 'mix-blend-difference')
+                );
 
-        // 👇 make logo white again
-        logo.style.filter = 'brightness(0) invert(1)';
-    }
+                // 👇 make logo white again
+                logo.style.filter = 'brightness(0) invert(1)';
+            }
 
-    const heroBg = document.getElementById('hero-bg');
-    if(heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.4}px)`;
-});
+            const heroBg = document.getElementById('hero-bg');
+            if (heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.4}px)`;
+        });
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -889,7 +1015,7 @@ window.addEventListener('DOMContentLoaded', () => {
         menuToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('open');
             const icon = menuToggle.querySelector('svg');
-            if(mobileMenu.classList.contains('open')) {
+            if (mobileMenu.classList.contains('open')) {
                 icon.innerHTML = '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>';
             } else {
                 icon.innerHTML = '<line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>';
@@ -913,5 +1039,76 @@ window.addEventListener('DOMContentLoaded', () => {
             e.target.reset();
         });
     </script>
+    <!-- 🔥 FIREBASE SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+    <script>
+        /* 🔧 INIT FIREBASE */
+        const firebaseConfig = {
+            apiKey: "AIzaSyD5O_sdWwGgHXoq55uNFtUr-7gXqnYVPTw",
+            authDomain: "website-review-87146.firebaseapp.com",
+            projectId: "website-review-87146",
+            storageBucket: "website-review-87146.appspot.com",
+            messagingSenderId: "456840617880",
+            appId: "1:456840617880:web:25fdfa0bb27c64a41655ed"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        /* 🚀 POST REVIEW */
+        function postReview() {
+            const input = document.getElementById('reviewInput');
+            const text = input.value.trim();
+
+            if (!text) return;
+
+            db.collection("reviews").add({
+                message: text,
+                time: firebase.firestore.FieldValue.serverTimestamp()
+            })
+                .then(() => {
+                    console.log("posted 😤");
+                    input.value = '';
+                })
+                .catch(err => {
+                    console.error("error:", err);
+                });
+        }
+
+        /* 📡 REALTIME FETCH */
+        db.collection("reviews")
+            .orderBy("time", "desc")
+            .onSnapshot(snapshot => {
+
+                const list = document.getElementById('reviewsList');
+                list.innerHTML = '';
+
+                snapshot.forEach(doc => {
+                    const data = doc.data();
+
+                    const div = document.createElement('div');
+                    div.className = "p-4 bg-gray-100 text-sm";
+
+                    const time = data.time ? new Date(data.time.seconds * 1000).toLocaleString() : "just now";
+
+                    div.innerHTML = `
+            <p>${data.message}</p>
+            <span class="text-[10px] opacity-50">${time}</span>
+        `;
+
+                    list.appendChild(div);
+                });
+            });
+    </script>
+    <!-- 💬 FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/918220957813" target="_blank"
+        class="fixed bottom-6 right-6 z-[999] w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+            class="w-full h-full object-contain">
+    </a>
 </body>
+
 </html>
